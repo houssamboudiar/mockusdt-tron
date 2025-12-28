@@ -1,32 +1,138 @@
-# TRC20-Coin-Starter
+# MockUSDT - Professional TRC20 Token
 
-This is a starter repository for creating your own, custom TRC20 compatible token on the TRON blockchain.
+A complete USDT-like TRC20 token with advanced features for the TRON blockchain.
 
-It already contains the base implementation of a TRC20, expressed in the interface: 
-[contracts/TRC20able.sol](https://github.com/cookie-coin/TRC20-Coin-Starter/blob/master/contracts/TRC20able.sol)
-and implemented in the abstract contract: 
-[contracts/BaseCoin.sol](https://github.com/cookie-coin/TRC20-Coin-Starter/blob/master/contracts/BaseCoin.sol).
+## Features
 
+- **USDT-Compatible**: 6 decimals, 1 billion supply, identical functionality
+- **Enhanced Security**: Pausable, blacklist, and fee collection features  
+- **Professional Grade**: Production-ready smart contract
+- **Multi-Network**: Testnet and mainnet deployment ready
 
-## Getting Started
+## Quick Start
 
-### Setup
-First you need to set up your development environment by installing the tron-box: [how to set up tronbox](https://developers.tron.network/docs/tron-box-user-guide)
+### Prerequisites
+- Node.js 16+
+- TRON wallet (TronLink recommended)
+- TRX for gas fees
 
-Then you need a local tron node running. Ideally you can do this with the [docker-tron-quickstart](https://github.com/TRON-US/docker-tron-quickstart)
+### Installation
+```bash
+npm install
+```
 
-After that you can just use your favorite IDE to start developing (e.g. Visual Studio Code or IntelliJ IDEA).
+### Configuration
+1. Copy `.env.example` to `.env`
+2. Add your private key
+3. Configure networks in `tronbox.js`
 
-The main contract for your token is [MyCoin.sol](https://github.com/cookie-coin/TRC20-Coin-Starter/blob/master/contracts/MyCoin.sol).
+### Deploy
+```bash
+# Testnet (FREE)
+npm run deploy:shasta
 
-For the unit-tests there is already a class with complete tests that should cover the basic implementation 
-and can be extended with the needs of your custom implementation: [MyCoin.test.js](https://github.com/cookie-coin/TRC20-Coin-Starter/blob/master/test/MyCoin.test.js).
+# Mainnet (~$100-200)
+npm run deploy:mainnet
+```
 
-For using tronbox to compile, migrate, deploy and run tests please check out [tron-box-contract-deployment](https://developers.tron.network/docs/tron-box-contract-deployment)
+## Token Details
 
-## Authors
-* **Florian Mitterbauer** - *Initial work* - [daflockinger](https://github.com/daflockinger)
+- **Name**: Mock USDT
+- **Symbol**: MUSDT  
+- **Decimals**: 6
+- **Supply**: 1,000,000,000 MUSDT
+- **Standard**: TRC20
+
+## Core Functions
+
+```javascript
+// Basic TRC20
+transfer(address to, uint256 amount)
+approve(address spender, uint256 amount)  
+transferFrom(address from, address to, uint256 amount)
+balanceOf(address account)
+totalSupply()
+
+// Enhanced Features (Owner Only)
+pause() / unpause()
+addToBlacklist(address account)
+setTransferFee(uint256 fee) // 0-10%
+mint(address to, uint256 amount)
+burn(uint256 amount)
+```
+
+## Networks
+
+### Testnet (FREE)
+- **Shasta**: https://shasta.tronscan.org
+- **Cost**: Free TRX from faucets
+- **Perfect for**: Testing and development
+
+### Mainnet  
+- **TRON**: https://tronscan.org
+- **Cost**: ~400-800 TRX deployment (~$100-200)
+- **For**: Production launch
+
+## Project Structure
+
+```
+├── contracts/
+│   ├── MockUSDT.sol    # Main token contract
+│   └── Migrations.sol  # Deployment helper
+├── migrations/         # Deployment scripts  
+├── test/              # Test files
+├── tronbox.js         # Network config
+└── .env               # Private keys
+```
+
+## Usage Examples
+
+### Transfer Tokens
+```javascript
+// Transfer 100 MUSDT
+await contract.transfer("TAddress...", 100000000);
+```
+
+### Check Balance  
+```javascript
+const balance = await contract.balanceOf("TAddress...");
+console.log(`Balance: ${balance / 1000000} MUSDT`);
+```
+
+### Owner Functions
+```javascript
+// Set 1% transfer fee
+await contract.setTransferFee(100);
+
+// Pause all transfers
+await contract.pause();
+
+// Mint 1000 new tokens
+await contract.mint("TAddress...", 1000000000);
+```
+
+## Security Features
+
+- ✅ **Pausable**: Emergency stop mechanism
+- ✅ **Blacklist**: Block malicious addresses  
+- ✅ **Fee Control**: Configurable 0-10% fees
+- ✅ **Owner Controls**: Restricted admin functions
+- ✅ **Mint/Burn**: Supply management
+- ✅ **Zero Address Protection**: Prevent accidents
+
+## Testing
+
+```bash
+npm test
+```
+
+## Deployment Costs
+
+| Network | Deployment | Transfer |
+|---------|------------|----------|
+| Shasta Testnet | FREE | FREE |
+| TRON Mainnet | ~$100-200 | ~$2-4 |
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/cookie-coin/TRC20-Coin-Starter/blob/master/LICENSE) file for details
 
+MIT
