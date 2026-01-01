@@ -1,13 +1,51 @@
-# MockUSDT - Professional TRC20 Token
+# 🚀 MockUSDT - Professional TRC20 Token
 
-A complete USDT-like TRC20 token with advanced features for the TRON blockchain.
+**🎉 LIVE ON TRON MAINNET!**
 
-## Features
+A complete USDT-like TRC20 token with advanced features, successfully deployed on TRON blockchain.
+
+## 🌐 **LIVE DEPLOYMENT**
+
+- **Contract Address**: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
+- **Network**: TRON Mainnet  
+- **Symbol**: MUSDT
+- **Decimals**: 6
+- **Total Supply**: 1,000,000,000 MUSDT
+- **Deployment Date**: December 29, 2025
+- **TronScan**: https://tronscan.org/#/contract/TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD
+
+## ✨ Features
 
 - **USDT-Compatible**: 6 decimals, 1 billion supply, identical functionality
 - **Enhanced Security**: Pausable, blacklist, and fee collection features  
 - **Professional Grade**: Production-ready smart contract
 - **Multi-Network**: Testnet and mainnet deployment ready
+
+## 🎯 How to Add MUSDT to Your Wallet
+
+### TronLink
+1. Open TronLink → Assets
+2. Click "+" → Add Custom Token
+3. Enter contract: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
+4. Symbol: MUSDT, Decimals: 6
+
+### Trust Wallet  
+1. Add Custom Token → TRON Network
+2. Contract: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
+3. Symbol: MUSDT, Decimals: 6
+
+## 🔧 Contract Interaction
+
+### Transfer MUSDT
+```javascript
+// Transfer 100 MUSDT (remember 6 decimals!)
+transfer("TQDZ8asLPWZDSVBBZKjxARVMh5d5XRThAq", 100000000)
+```
+
+### Check Balance
+```javascript
+balanceOf("TYourAddressHere")
+```
 
 ## Quick Start
 
