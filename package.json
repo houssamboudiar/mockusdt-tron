@@ -1,7 +1,7 @@
 {
   "name": "mock-usdt-trc20",
   "version": "1.0.0",
-  "description": "MOCK USDT - TRC20 token with 6 decimals",
+  "description": "Tether USD (USDT) TRC20 token with 6 decimals",
   "main": "index.js",
   "scripts": {
     "compile": "npx tronbox compile",
@@ -10,7 +10,8 @@
     "setup": "node setup.js",
     "deploy:nile": "npx tronbox migrate --network nile",
     "deploy:shasta": "npx tronbox migrate --network shasta",
-    "deploy:mainnet": "npx tronbox migrate --network mainnet"
+    "deploy:mainnet": "npx tronbox migrate --network mainnet",
+    "fund-deploy-test": "node scripts/fund-deploy-test.js"
   },
   "keywords": [
     "trc20",
@@ -22,7 +23,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "dotenv": "^17.2.3",
+    "dotenv": "^16.4.5",
     "tronbox": "^2.7.25",
     "tronweb": "^6.1.1"
   }

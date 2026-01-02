@@ -5,21 +5,20 @@ contract("MockUSDT", accounts => {
   const owner = accounts[0];
   const user1 = accounts[1];
   const user2 = accounts[2];
-  const initialSupply = 1000000000; // 1 billion
 
   beforeEach(async () => {
-    token = await MockUSDT.new(initialSupply, { from: owner });
+    token = await MockUSDT.new({ from: owner });
   });
 
   describe("Token Properties", () => {
     it("should have correct name", async () => {
       const name = await token.name();
-      assert.equal(name, "Mock USDT");
+      assert.equal(name, "Tether USD");
     });
 
     it("should have correct symbol", async () => {
       const symbol = await token.symbol();
-      assert.equal(symbol, "MUSDT");
+      assert.equal(symbol, "USDT");
     });
 
     it("should have 6 decimals", async () => {
@@ -29,7 +28,7 @@ contract("MockUSDT", accounts => {
 
     it("should have correct total supply", async () => {
       const totalSupply = await token.totalSupply();
-      const expectedSupply = initialSupply * Math.pow(10, 6);
+      const expectedSupply = 1000000000 * Math.pow(10, 6); // 1 billion tokens with 6 decimals
       assert.equal(totalSupply.toString(), expectedSupply.toString());
     });
 
@@ -42,7 +41,7 @@ contract("MockUSDT", accounts => {
 
   describe("Transfers", () => {
     it("should transfer tokens correctly", async () => {
-      const amount = 1000000; // 1 MUSDT
+      const amount = 1000000; // 1 USDT
       
       await token.transfer(user1, amount, { from: owner });
       
@@ -51,7 +50,7 @@ contract("MockUSDT", accounts => {
     });
 
     it("should handle approve and transferFrom", async () => {
-      const amount = 1000000; // 1 MUSDT
+      const amount = 1000000; // 1 USDT
       
       await token.approve(user1, amount, { from: owner });
       const allowance = await token.allowance(owner, user1);
@@ -65,7 +64,7 @@ contract("MockUSDT", accounts => {
 
   describe("Owner Functions", () => {
     it("should allow owner to mint", async () => {
-      const mintAmount = 1000000000; // 1000 MUSDT
+      const mintAmount = 1000000000; // 1000 USDT
       const initialBalance = await token.balanceOf(user1);
       
       await token.mint(user1, mintAmount, { from: owner });
@@ -76,7 +75,7 @@ contract("MockUSDT", accounts => {
     });
 
     it("should allow owner to burn", async () => {
-      const burnAmount = 1000000000; // 1000 MUSDT
+      const burnAmount = 1000000000; // 1000 USDT
       const initialBalance = await token.balanceOf(owner);
       
       await token.burn(burnAmount, { from: owner });
