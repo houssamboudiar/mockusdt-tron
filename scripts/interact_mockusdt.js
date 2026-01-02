@@ -1,4 +1,4 @@
-const TronWeb = require('tronweb');
+const TronWeb = require('tronweb').TronWeb || require('tronweb');
 require('dotenv').config();
 
 // MockUSDT Contract Interaction Script
@@ -82,7 +82,7 @@ class MockUSDTInteraction {
     }
 
     async transfer(toAddress, amount) {
-        console.log(`🚀 Transferring ${amount} MUSDT to ${toAddress}...\n`);
+        console.log(`🚀 Transferring ${amount} USDT to ${toAddress}...\n`);
         
         try {
             const contract = await this.getContract();
@@ -93,7 +93,7 @@ class MockUSDTInteraction {
             
             console.log(`📊 Transfer Details:`);
             console.log(`   • To: ${toAddress}`);
-            console.log(`   • Amount: ${amount} MUSDT`);
+            console.log(`   • Amount: ${amount} USDT`);
             console.log(`   • Raw Amount: ${rawAmount}`);
 
             const result = await contract.transfer(toAddress, rawAmount).send();
@@ -109,7 +109,7 @@ class MockUSDTInteraction {
     }
 
     async approve(spenderAddress, amount) {
-        console.log(`🔓 Approving ${amount} MUSDT for ${spenderAddress}...\n`);
+        console.log(`🔓 Approving ${amount} USDT for ${spenderAddress}...\n`);
         
         try {
             const contract = await this.getContract();
@@ -137,7 +137,7 @@ class MockUSDTInteraction {
             const decimals = await contract.decimals().call();
 
             console.log(`🔍 Allowance from ${ownerAddress} to ${spenderAddress}:`);
-            console.log(`   • Allowance: ${this.formatTokenAmount(allowance, decimals)} MUSDT`);
+            console.log(`   • Allowance: ${this.formatTokenAmount(allowance, decimals)} USDT`);
 
             return allowance;
         } catch (error) {
@@ -202,7 +202,7 @@ async function main() {
 
     console.log('\n💡 Usage Examples:');
     console.log('==================');
-    console.log('// Transfer 100 MUSDT');
+    console.log('// Transfer 100 USDT');
     console.log('await mockUSDT.transfer("TQDZ8asLPWZDSVBBZKjxARVMh5d5XRThAq", 100);');
     console.log('');
     console.log('// Check balance');

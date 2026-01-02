@@ -8,9 +8,9 @@ A complete USDT-like TRC20 token with advanced features, successfully deployed o
 
 - **Contract Address**: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
 - **Network**: TRON Mainnet  
-- **Symbol**: MUSDT
+- **Symbol**: USDT
 - **Decimals**: 6
-- **Total Supply**: 1,000,000,000 MUSDT
+- **Total Supply**: 1,000,000,000 USDT
 - **Deployment Date**: December 29, 2025
 - **TronScan**: https://tronscan.org/#/contract/TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD
 
@@ -21,24 +21,24 @@ A complete USDT-like TRC20 token with advanced features, successfully deployed o
 - **Professional Grade**: Production-ready smart contract
 - **Multi-Network**: Testnet and mainnet deployment ready
 
-## 🎯 How to Add MUSDT to Your Wallet
+## 🎯 How to Add USDT to Your Wallet
 
 ### TronLink
 1. Open TronLink → Assets
 2. Click "+" → Add Custom Token
 3. Enter contract: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
-4. Symbol: MUSDT, Decimals: 6
+4. Symbol: USDT, Decimals: 6
 
 ### Trust Wallet  
 1. Add Custom Token → TRON Network
 2. Contract: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
-3. Symbol: MUSDT, Decimals: 6
+3. Symbol: USDT, Decimals: 6
 
 ## 🔧 Contract Interaction
 
-### Transfer MUSDT
+### Transfer USDT
 ```javascript
-// Transfer 100 MUSDT (remember 6 decimals!)
+// Transfer 100 USDT (remember 6 decimals!)
 transfer("TQDZ8asLPWZDSVBBZKjxARVMh5d5XRThAq", 100000000)
 ```
 
@@ -75,10 +75,10 @@ npm run deploy:mainnet
 
 ## Token Details
 
-- **Name**: Mock USDT
-- **Symbol**: MUSDT  
+- **Name**: Tether USD
+- **Symbol**: USDT  
 - **Decimals**: 6
-- **Supply**: 1,000,000,000 MUSDT
+- **Supply**: 1,000,000,000 USDT
 - **Standard**: TRC20
 
 ## Core Functions
@@ -127,14 +127,14 @@ burn(uint256 amount)
 
 ### Transfer Tokens
 ```javascript
-// Transfer 100 MUSDT
+// Transfer 100 USDT
 await contract.transfer("TAddress...", 100000000);
 ```
 
 ### Check Balance  
 ```javascript
 const balance = await contract.balanceOf("TAddress...");
-console.log(`Balance: ${balance / 1000000} MUSDT`);
+console.log(`Balance: ${balance / 1000000} USDT`);
 ```
 
 ### Owner Functions

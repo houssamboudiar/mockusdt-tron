@@ -3,9 +3,9 @@
 ## 📋 Contract Details
 
 **Contract Name**: MockUSDT  
-**Symbol**: MUSDT  
+**Symbol**: USDT  
 **Decimals**: 6  
-**Total Supply**: 1,000,000,000 MUSDT (1 billion tokens)
+**Total Supply**: 1,000,000,000 USDT (1 billion tokens)
 
 ## 🌐 Mainnet Deployment
 
@@ -52,7 +52,7 @@
 ## 📊 Initial State
 
 - **Total Supply**: 1,000,000,000,000,000 (raw with decimals)
-- **Owner Balance**: 1,000,000,000 MUSDT
+- **Owner Balance**: 1,000,000,000 USDT
 - **Paused**: false
 - **Transfer Fee**: 0%
 - **Fee Collector**: Owner address
@@ -62,14 +62,14 @@
 ### TronLink
 1. Go to Assets → Add Token
 2. Enter contract address: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
-3. Symbol: MUSDT
+3. Symbol: USDT
 4. Decimals: 6
 
 ### Trust Wallet
 1. Add Custom Token
 2. Network: TRON
 3. Contract: `TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD`
-4. Symbol: MUSDT
+4. Symbol: USDT
 5. Decimals: 6
 
 ## ⚠️ Security Notes
@@ -81,7 +81,7 @@
 
 ## 🎯 Usage Examples
 
-### Transfer 100 MUSDT
+### Transfer 100 USDT
 ```solidity
 transfer(recipient_address, 100000000)  // 100 * 10^6
 ```

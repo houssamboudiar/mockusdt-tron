@@ -20,10 +20,10 @@ module.exports = function(deployer, network, accounts) {
     console.log("https://tronscan.org/#/contract/TBEDHFeW17mFnbdLGwPjze4aizJfke9FTD");
     console.log("");
     console.log("✅ Contract Features:");
-    console.log("• Name: Mock USDT");
-    console.log("• Symbol: MUSDT");
+    console.log("• Name: Tether USD");
+    console.log("• Symbol: USDT");
     console.log("• Decimals: 6");
-    console.log("• Total Supply: 1,000,000,000 MUSDT");
+    console.log("• Total Supply: 1,000,000,000 USDT");
     console.log("• Owner: TR12PZEauYw4USu5ZiN8bvP4ZD4TAstyac");
     console.log("• Advanced Features: Pause, Blacklist, Mint/Burn, Fees");
     

@@ -16,7 +16,6 @@ build/
 dist/
 
 # IDE files
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -59,3 +58,7 @@ build/contracts/
 # Private keys (NEVER commit these!)
 *.key
 private_keys/
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
